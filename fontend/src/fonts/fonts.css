@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'SerifStudio';
+  src:  url('../fonts/font-serif-studio.woff2') format('woff2'),
+        url('myfont.woff') format('woff');
+}
