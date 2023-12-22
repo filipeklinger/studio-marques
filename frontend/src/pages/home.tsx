@@ -7,8 +7,13 @@ import tatoo3 from '../assets/images/tatoo3.jpg'
 import img2 from '../assets/images/img2.jpg';
 import { PhotoCard } from "components/PhotoCard"
 import { Section } from "components/Section"
+import { openWhatsapp } from "utils/contactUtils"
 
 export function Home() {
+    function handleClick(msg:string) {
+        const m = "Olá, gostaria de fazer uma tatuagem " + msg;
+        openWhatsapp(m);
+    }
     return (
         <>
             <Container>
@@ -36,18 +41,21 @@ export function Home() {
                     </Section>
 
                     <Section variant="white" title="Nossos serviços">
-                        <div className="flex flex-col justify-center md:gap-5">
-                            <PhotoCard src={tatoo1}>
-                                <p className="capitalize">MINIMALISTA</p>
-                                <h1 className="text-4xl font-serif pb-8">Simples</h1>
-                                <p>R$100</p>
+                        <div className="flex flex-col md:flex-row justify-center md:gap-5">
+                            <PhotoCard src={tatoo1} onClick={() => handleClick("Minimalista")}>
+                                <div className="cursor-pointer">
+                                    <p className="capitalize">MINIMALISTA</p>
+                                    <h1 className="text-4xl font-serif pb-8">Simples</h1>
+                                    <p>R$100</p>
+                                </div>
+
                             </PhotoCard>
-                            <PhotoCard src={tatoo2} >
+                            <PhotoCard src={tatoo2} onClick={() => handleClick("média")}>
                                 <p className="capitalize">Braço</p>
                                 <h1 className="text-4xl font-serif pb-8">Preenchido</h1>
                                 <p>R$350</p>
                             </PhotoCard>
-                            <PhotoCard src={tatoo3} >
+                            <PhotoCard src={tatoo3} onClick={() => handleClick("grande")} >
                                 <p className="capitalize">Grande</p>
                                 <h1 className="text-4xl font-serif pb-8">Total</h1>
                                 <p>R$100</p>
@@ -56,12 +64,12 @@ export function Home() {
                     </Section>
 
                     <Section title="">
-                        <div className="flex flex-col-reverse md:flex-row mb-10">
+                        <div className="flex flex-col-reverse md:flex-row mb-10 justify-between items-center ">
                             <div>
-                                <img className="w-full h-full object-cover" src={img2} />
+                                <img className="w-full h-full object-cover md:aspect-[16/11]" src={img2} />
                             </div>
-                            <div className="text-3xl md:text-4xl pb-5">
-                                <p >Studio completo</p>
+                            <div className="md:w-1/3 text-center text-3xl md:text-4xl pb-10">
+                                <p>Studio completo</p>
                                 <p>Com hora marcada</p>
                             </div>
                         </div>
@@ -69,7 +77,7 @@ export function Home() {
 
                     <Section fontSize="text-3xl md:text-4xl" title="Depoimento de clientes">
                         <div className="flex flex-col">
-                            
+
                         </div>
                     </Section>
                 </main>
