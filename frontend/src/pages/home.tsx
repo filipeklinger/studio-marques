@@ -5,6 +5,7 @@ import tatoo1 from '../assets/images/tatoo1.jpg'
 import tatoo2 from '../assets/images/tatoo2.jpg'
 import tatoo3 from '../assets/images/tatoo3.jpg'
 import img1 from '../assets/images/img1.png';
+import videoPoster from '../assets/images/poster.jpeg';
 import { PhotoCard } from "components/PhotoCard"
 import { Section } from "components/Section"
 import { openWhatsapp } from "utils/contactUtils"
@@ -33,7 +34,7 @@ export function Home() {
                             </div>
                             <div>
                                 <div className="bg-white rounded-lg text-black w-full px-2 py-2">
-                                    <video controls autoPlay loop muted>
+                                    <video controls autoPlay loop muted poster={videoPoster}>
                                         <source src={trabalho_vid} type="video/mp4" />
                                     </video>
 
