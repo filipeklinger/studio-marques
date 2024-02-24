@@ -12,7 +12,7 @@ import { openWhatsapp } from "utils/contactUtils"
 
 export function Home() {
     function handleClick(msg: string) {
-        const m = "Olá, gostaria de fazer uma tatuagem " + msg;
+        const m = "Olá, gostaria de fazer um orçamento para uma tatuagem " + msg;
         openWhatsapp(m);
     }
     return (
@@ -57,12 +57,12 @@ export function Home() {
                             <PhotoCard src={tatoo2} onClick={() => handleClick("média")}>
                                 <p className="capitalize">Braço</p>
                                 <h1 className="text-4xl font-serif pb-8">Preenchido</h1>
-                                <p>R$350</p>
+                                <p>R$500</p>
                             </PhotoCard>
                             <PhotoCard src={tatoo3} onClick={() => handleClick("grande")} >
                                 <p className="capitalize">Grande</p>
                                 <h1 className="text-4xl font-serif pb-8">Total</h1>
-                                <p>R$100</p>
+                                <p>R$600</p>
                             </PhotoCard>
                         </div>
                     </Section>
