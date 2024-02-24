@@ -12,7 +12,7 @@ import { openWhatsapp } from "utils/contactUtils"
 
 export function Home() {
     function handleClick(msg: string) {
-        const m = "Olá, gostaria de fazer um orçamento para uma tatuagem " + msg;
+        const m = "Olá, gostaria de fazer um orçamento";
         openWhatsapp(m);
     }
     return (
@@ -84,7 +84,7 @@ export function Home() {
                             <p className="text-center">Agende sua tatuagem pelo whatsapp</p>
                             <div className="flex justify-center">
                                 <button
-                                    onClick={() => openWhatsapp("Olá, gostaria de fazer uma tatuagem")}
+                                    onClick={() => openWhatsapp("Olá, gostaria de fazer um orçamento")}
                                     className="bg-yellow-400 hover:bg-yellow-600 text-xl text-white rounded-full px-24 py-4 mt-10"
                                 >
                                     Agendar
